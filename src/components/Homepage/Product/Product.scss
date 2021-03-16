@@ -1,0 +1,30 @@
+.product {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 1rem;
+	text-align: center;
+	transition: transform 0.2s;
+	width: 17.5rem;
+
+	&:hover {
+		transform: scale(1.02);
+	}
+
+	.product-img {
+		height: 7.5rem;
+	}
+
+	.info {
+		display: block;
+	}
+
+	.product-name {
+		margin: 1rem auto 0;
+	}
+
+	.product-price {
+		font-size: 0.8rem;
+		margin: 0.25rem auto 0.5rem;
+	}
+}
