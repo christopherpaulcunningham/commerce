@@ -1,0 +1,17 @@
+.homepage {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+
+	@include breakpoint(xs) {
+		padding: 2rem 3rem;
+		width: 100%;
+	}
+
+	.title {
+		display: block;
+		padding-left: 5rem;
+		width: 100%;
+	}
+}
