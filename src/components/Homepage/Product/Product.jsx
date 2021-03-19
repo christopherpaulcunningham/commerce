@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
     return (
-        <Link to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/products/${product.id}`} style={{ textDecoration: 'none', color: '#000000' }}>
             <div className="product">
                 <img src={product.media.source} className="product-img" alt="product" />
                 <span className="product-name info">{product.name}</span>

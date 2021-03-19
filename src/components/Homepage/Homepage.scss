@@ -7,11 +7,14 @@
 	@include breakpoint(xs) {
 		padding: 2rem 3rem;
 		width: 100%;
-	}
+	}	
+}
 
-	.title {
-		display: block;
-		padding-left: 5rem;
-		width: 100%;
-	}
+.homepage-title {
+	display: block;
+	font-size: 1.125rem;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+	text-align: center;
+	width: 100%;	
 }
