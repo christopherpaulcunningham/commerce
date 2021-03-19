@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { commerce } from '../../lib/commerce';
 
-const ProductDetails = ({ match }) => {
+import PlusIcon from './../../assets/plus.png';
+import MinusIcon from './../../assets/minus.png';
+
+const ProductDetails = ({ match, onAddProductToCart }) => {
 	const productId = match.params.id;
 	const history = useHistory();
 	const [product, setProduct] = useState();
@@ -35,7 +38,24 @@ const ProductDetails = ({ match }) => {
                             <span className="price">€{product.price.formatted}</span>
                             <span className="description" dangerouslySetInnerHTML={ {__html: product.description} }></span>                            
                         </div>
-                        <button className="btn-cart">Add to Cart</button>
+                        <div className="details-flex-container">
+                            <div className="product-quantity-container">
+                                <button
+                                    className="quantity-icon" onClick={() => setQuantity(quantity - 1)} >
+                                    <img src={MinusIcon} className="quantity-image" alt="Minus" />
+                                </button>
+                                <span className="quantity-amount">{quantity}</span>
+                                <button
+                                    className="quantity-icon" onClick={() =>
+                                        setQuantity(quantity + 1)
+                                    }
+                                >
+                                    <img src={PlusIcon} className="quantity-image" alt="Plus" />
+                                </button>
+                            </div>
+                            <button className="btn-cart" onClick={() => onAddProductToCart(product.id, quantity) }>Add to Cart</button>                            
+                        </div>
+                        
                     </div>					
 				</div>
 			)}

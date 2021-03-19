@@ -1,5 +1,5 @@
 .product-details {
-	padding: 1rem 1rem;
+	padding: 1rem;
 
 	@include breakpoint(md) {
 		padding: 1rem 4rem;
@@ -16,6 +16,7 @@
 			color: $lightFontColor;
 			cursor: pointer;
 			margin-right: 1rem;
+			padding: 0;
 			text-decoration: none;
 		}
 
@@ -98,6 +99,18 @@
 			}
 		}
 
+		.details-flex-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.product-quantity-container {
+			line-height: 2.5rem;
+			margin: 1rem 0;
+			text-align: center;
+			width: 50%;
+		}
+
 		.btn-cart {
 			background-color: #000000;
 			border: none;
@@ -108,7 +121,7 @@
 			font-size: 0.9rem;
 			font-weight: 600;
 			height: 2.5rem;
-			margin: 3rem auto 0;
+			margin: 1rem auto 0;
 			width: 15rem;
 
 			&:hover {

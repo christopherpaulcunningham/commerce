@@ -5,10 +5,10 @@ import Product from './Product/Product';
 const Homepage = ({ products }) => {
 	return (
 		<div className="homepage">
-			<h2 className="title">Featured Products</h2>
-			{products.map((product, index) => {
-				return <Product product={product} key={index} />;
-			})}
+			<span className="homepage-title">Featured Products</span>
+			{products.map((product, index) => 
+				<Product product={product} key={index} />
+			)}
 		</div>
 	);
 };
