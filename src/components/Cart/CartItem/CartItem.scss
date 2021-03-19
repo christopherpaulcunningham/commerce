@@ -1,0 +1,106 @@
+.cart-item {
+	display: flex;
+	font-size: 0.9rem;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.5rem auto;
+	width: 100%;
+}
+
+.item-image {
+	width: 15%;
+}
+
+.item-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 85%;
+
+	@include breakpoint(xs) {
+		flex-direction: row;
+	}
+}
+
+.item-name {
+	padding: 0 0 0.5rem 1rem;
+	width: 100%;
+
+	@include breakpoint(xs) {
+		padding: 0 0 0 2rem;
+		width: 50%;
+	}
+}
+
+.item-details-flexbox {
+	display: flex;
+	flex: 1;
+	font-size: 0.8rem;
+	justify-content: space-between;
+	padding: 0 0 0 1rem;
+	width: 100%;
+
+	@include breakpoint(xs) {
+		font-size: 0.9rem;
+		padding: 0;
+	}
+}
+
+.item-price {
+	text-align: center;
+}
+
+.quantity {
+	text-align: center;
+}
+
+.quantity-amount {
+	display: inline-block;
+	width: 2rem;
+}
+
+.quantity-icon {
+	background: none !important;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.quantity-image {
+	height: 0.5rem;
+
+	&:hover {
+		color: #585858;
+	}
+}
+.btn-remove {
+	display: none;
+	
+	@include remove-button-style();
+
+	@include breakpoint(sm) {
+		color: $lightFontColor;
+		display: block;
+		height: 1.5rem;
+		width: 12.5%;
+	}
+
+	&:hover {
+		color: #585858;
+	}
+}
+
+.btn-remove-alt {
+	display: block;
+
+	@include remove-button-style();
+
+	@include breakpoint(sm) {
+		display: none;
+	}
+
+	img {
+		height: 1rem;
+	}
+}

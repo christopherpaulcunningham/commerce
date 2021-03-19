@@ -20,3 +20,13 @@
 		@warn "Breakpoint mixin supports: xs, sm, md, lg";
 	}
 }
+
+// Remove the default button settings for using an icon/text.
+@mixin remove-button-style() {
+	background: none !important;
+	border: none;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}

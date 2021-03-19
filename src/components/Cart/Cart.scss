@@ -1,0 +1,106 @@
+.cart {
+	padding: 1rem 1.5rem;
+
+	@include breakpoint(md) {
+		padding: 1rem 5rem;
+	}
+}
+
+.title {
+	display: block;
+	font-size: 1.125rem;
+	margin-bottom: 3rem;
+}
+
+.loading {
+	display: block;
+	font-size: 0.9rem;
+	padding: 1rem 0;
+	text-align: center;
+	@include breakpoint(md) {
+		padding: 1rem 4rem;
+	}
+}
+
+.total-items {
+	font-size: 0.8rem;
+}
+
+.items-container {
+	margin: 0 0 2rem;
+}
+
+.subtotal-container {
+	border-top: 1px solid $lightFontColor;
+	padding: 1rem 0 0;
+	text-align: right;
+
+	@include breakpoint(sm) {
+		margin: 3rem 0 0 0;
+	}
+}
+
+.subtotal-title {
+	display: block;
+	font-size: 0.8rem;
+	margin: 0.5rem 0 0.5rem 0;
+}
+
+.subtotal-amount {
+	font-size: 1.125rem;
+}
+
+.shipping-notice {
+	color: $lightFontColor;
+	display: block;
+	font-size: 0.75rem;
+	margin: 0.5rem 0 0 0;
+}
+
+.cart-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem auto 0 auto;
+	text-align: center;
+	width: 100%;
+
+	@include breakpoint(xs) {
+		float: right;
+		justify-content: flex-end;
+		width: 40%;
+	}
+}
+
+.cart-button {
+	border: 1px solid #000000;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 600;
+	height: 2.5rem;
+	margin: 0 auto;
+	transition: all 0.2s ease-in;
+	width: 90%;
+
+	@include breakpoint(xs) {
+		margin: 0 0 1rem 1rem;
+		width: 12.5rem;
+	}
+}
+
+.primary-btn {
+	background-color: #000000;
+	color: #ffffff;
+
+	&:hover {
+		background-color: #494949;
+	}
+}
+
+.secondary-btn {
+	background-color: #ffffff;
+
+	&:hover {
+		background-color: #f8f7f7;
+	}
+}

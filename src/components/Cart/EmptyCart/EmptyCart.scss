@@ -1,0 +1,9 @@
+.empty-cart {
+	font-size: 0.9rem;
+    padding: 1rem;
+	text-align: center;
+
+	@include breakpoint(md) {
+		padding: 1rem 4rem;
+	}
+}
