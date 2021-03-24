@@ -1,0 +1,79 @@
+.address-form {
+    margin: 2rem auto;
+    width: 100%;
+
+    @include breakpoint(xs){
+        width: 70%;        
+    }
+
+    .form {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.address-title {
+    display: block;
+    margin: 0 0 2rem;
+}
+
+.dropdown-container {
+    width: 49%;
+    padding: 0 1rem;
+}
+
+.address-form-label {
+    display: block;
+}
+.address-dropdown {
+    border: 1px solid #e2e2e2;
+    display: block;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9rem;
+    height: 2.5rem;
+    margin: 0 0 1rem;    
+    width: 100%;
+
+    @include breakpoint(xs){
+        margin: 0 0 0.5rem;
+        width: 100%;        
+    }
+}
+
+.checkout-button {  
+    background-color: #000000;  
+	border: 1px solid #000000;
+	border-radius: 5px;
+    color: #ffffff;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 600;
+    height: 2.5rem;
+    margin: 2rem 1rem 2rem auto;
+    // margin-left: auto;
+	transition: all 0.2s ease-in;
+    width: 10rem;
+}
+
+.btn-next {
+    background-color: #000000;  
+	border: 1px solid #000000;
+	border-radius: 5px;
+    color: #ffffff;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 600;
+    height: 2.5rem;
+    margin: 2rem 1rem 2rem auto;
+    // margin-left: auto;
+	transition: all 0.2s ease-in;
+    width: 10rem;
+}
+
+.btn-back {
+    @include remove-button-style();    
+	height: 1rem;
+}
+

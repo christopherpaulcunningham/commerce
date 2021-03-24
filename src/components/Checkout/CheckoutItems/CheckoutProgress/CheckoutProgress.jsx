@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CheckoutProgress = ({ checkoutStage }) => {
+const CheckoutProgress = ({ checkoutStage, checkoutSteps }) => {
     return (
         <div className="checkout-progress">
-            <div className={"progress-item" + (checkoutStage === 0 ? " active" : " inactive")}>Address</div>
-            <div className={"progress-item" + (checkoutStage === 1 ? " active" : " inactive")}>Payment</div>
-            <div className={"progress-item" + (checkoutStage === 2 ? " active" : " inactive")}>Review</div>
+            {checkoutSteps.map((step, index) => {
+                return <div key={index} className={"progress-item" + (checkoutStage === index ? " active" : " inactive")}>{step}</div>
+            })}
         </div>
     )
 }
