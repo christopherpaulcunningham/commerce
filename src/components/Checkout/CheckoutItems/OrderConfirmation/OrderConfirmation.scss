@@ -1,0 +1,37 @@
+.order-confirmation-container {
+    margin: 2rem auto;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(xs){
+        width: 70%;
+    }
+}
+
+.success-icon {
+    height: 5rem;
+
+    @include breakpoint(xs){
+        margin: 1rem 0 0;
+        height: 7rem;
+    }
+}
+
+.thanks-text {
+    display: block;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+
+    @include breakpoint(xs){
+        font-size: 2rem;
+    }
+}
+
+.order-number-text {
+    color: $lightFontColor;
+    font-size: 0.8rem;
+
+    @include breakpoint(xs){
+        font-size: 0.9rem;
+    }
+}
