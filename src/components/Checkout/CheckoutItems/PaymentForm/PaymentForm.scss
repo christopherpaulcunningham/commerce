@@ -1,0 +1,75 @@
+.payment-form {
+	margin: 2rem auto;
+	width: 100%;
+
+	@include breakpoint(xs) {
+		// width: 90%;
+	}
+
+	@include breakpoint(sm) {
+		@include flex-container-space-between();
+	}
+}
+
+.visualisation-container {
+	display: flex;
+	height: 20rem;
+	width: 100%;
+
+	@include breakpoint(sm) {
+		width: 50%;
+	}
+}
+
+.card-visualisation {
+	border-radius: 7.5px;
+	height: 15rem;
+	margin: auto;
+	width: 25rem;
+
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(60%, #4092b5),
+		color-stop(90%, #3580aa)
+	);
+	background: -webkit-linear-gradient(left, #4092b5 60%, #3580aa 90%);
+	background: -o-linear-gradient(left, #4092b5 60%, #3580aa 90%);
+	background: linear-gradient(to right, #4092b5 60%, #3580aa 90%);
+}
+
+.order-review-container {
+	padding: 1rem 0.5rem;
+	width: 100%;
+
+	@include breakpoint(sm) {
+		border-right: 1px solid $lightFontColor;
+		height: 25rem;
+		overflow-y: scroll;
+		padding: 1rem 3rem 1rem 1rem;
+		width: 50%;
+	}
+}
+
+.payment-details {
+    margin: 2rem 0;
+	padding: 1rem 0.5rem;
+	width: 100%;
+
+	@include breakpoint(sm) {
+		height: 25rem;
+		padding: 1rem 2rem 1rem 3rem;
+		width: 50%;
+	}
+}
+
+.btn-pay {
+	display: block;
+	margin: 4rem auto 1rem;
+	width: 80%;
+
+	@include breakpoint(sm) {
+        margin: 7rem auto 1rem;
+	}
+}

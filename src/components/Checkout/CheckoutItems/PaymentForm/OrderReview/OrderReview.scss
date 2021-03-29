@@ -1,0 +1,71 @@
+.review-item {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.9rem;
+    justify-content: space-between;
+    margin: 0 0 1.5rem;
+}
+
+.review-item-image {
+    margin: 0 1.5rem 0 0;
+    height: 1.5rem;
+
+    @include breakpoint(sm){
+        height: 2rem;
+    }
+}
+
+.review-item-group {
+    width: 60%;
+}
+
+.review-item-name {
+    display: block;
+}
+
+.review-item-qty { 
+    color: $lightFontColor;   
+    display: block;
+    font-size: 0.8rem;
+    margin: 0.25rem 0 0;
+}
+
+.review-item-price {
+    text-align: right;
+    width: 20%;
+}
+
+.review-total-container {
+    border-top: 1px solid $lightFontColor;
+    font-size: 0.9rem;
+	padding: 1rem 0 0;
+	text-align: right;
+}
+
+.order-subtotal {
+    font-size: 0.9rem;
+}
+
+.review-total-header {
+    color: $lightFontColor;
+    display: inline-block;
+}
+
+.review-total-price {
+    display: inline-block;
+    width: 7rem;
+
+    @include breakpoint(sm){
+        width: 10rem;
+    }
+}
+
+.order-total {
+    border-top: 1px dashed $lightFontColor;
+    display: block;
+    float: right;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    width: 5rem;
+    
+}

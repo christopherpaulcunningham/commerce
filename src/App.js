@@ -9,6 +9,7 @@ import './main.scss';
 const App = () => {
 	const [products, setProducts] = useState([]);
 	const [cart, setCart] = useState({});
+	const [order, setOrder] = useState({});
 
 	// Fetch a list of products from commerce js.
 	const fetchProducts = async () => {
@@ -20,7 +21,6 @@ const App = () => {
 	const fetchCart = async () => {
 		const cart = await commerce.cart.retrieve();
 		setCart(cart);
-		console.log(cart);
 	};
 
 	const handleAddProductToCart = async (productId, quantity) => {
@@ -36,6 +36,24 @@ const App = () => {
 	const handleUpdateCartQuantity = async (productId, quantity) => {
 		const { cart } = await commerce.cart.update(productId, { quantity });
 		setCart(cart);
+	};
+
+	const handleClearShoppingCart = async () => {
+		const emptyCart = await commerce.cart.refresh();
+		setCart(emptyCart);
+	};
+
+	const handleCheckout = async (checkoutTokenId, orderDetails) => {
+		try {
+			const newOrder = await commerce.checkout.capture(
+				checkoutTokenId,
+				orderDetails
+			);
+			setOrder(newOrder);
+			handleClearShoppingCart();
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	useEffect(() => {
@@ -54,7 +72,9 @@ const App = () => {
 					<Route
 						path="/products/:id"
 						render={(props) => (
-							<ProductDetails {...props} onAddProductToCart={handleAddProductToCart}
+							<ProductDetails
+								{...props}
+								onAddProductToCart={handleAddProductToCart}
 							/>
 						)}
 					/>
@@ -62,12 +82,19 @@ const App = () => {
 						<Cart
 							cart={cart}
 							onAddProductToCart={handleAddProductToCart}
-							onRemoveProductFromCart={handleRemoveProductFromCart}
+							onRemoveProductFromCart={
+								handleRemoveProductFromCart
+							}
 							onUpdateCartQuantity={handleUpdateCartQuantity}
 						/>
 					</Route>
 					<Route exact path="/checkout">
-						<Checkout cart={cart} />
+						<Checkout
+							cart={cart}
+							order={order}
+							onClearShoppingCart={handleClearShoppingCart}
+							onCheckout={handleCheckout}
+						/>
 					</Route>
 				</Switch>
 			</div>

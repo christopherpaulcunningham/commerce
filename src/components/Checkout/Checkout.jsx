@@ -6,14 +6,14 @@ import {
 	CheckoutProgress,
 	AddressForm,
 	PaymentForm,
-	OrderReview,
+	OrderConfirmation
 } from './CheckoutItems';
 
-const Checkout = ({ cart }) => {
-	const checkoutSteps = ["Address", "Payment", "Review"];
+const Checkout = ({ cart, order, handleClearShoppingCart, onCheckout }) => {
+	const checkoutSteps = ['Address', 'Payment', 'Confirm'];
 	const [checkoutStage, setCheckoutStage] = useState(0);
 	const [checkoutToken, setCheckoutToken] = useState(null);
-	const [deliveryDetails, setDeliveryDetails] = useState({});
+	const [deliveryData, setDeliveryData] = useState({});
 
 	const handleBackClick = () => {
 		setCheckoutStage((prevActiveStep) => prevActiveStep - 1);
@@ -21,7 +21,7 @@ const Checkout = ({ cart }) => {
 
 	const handleNextClick = (data) => {
 		setCheckoutStage((prevActiveStep) => prevActiveStep + 1);
-		setDeliveryDetails(data);
+		setDeliveryData(data);
 	};
 
 	useEffect(() => {
@@ -41,18 +41,36 @@ const Checkout = ({ cart }) => {
 
 	const ActiveForm = () => {
 		if (checkoutStage === 0) {
-			return <AddressForm onNextClick={handleNextClick} setDeliveryDetails={setDeliveryDetails} checkoutToken={checkoutToken} />;
+			return (
+				<AddressForm
+					onNextClick={handleNextClick}
+					checkoutToken={checkoutToken}
+				/>
+			);
 		} else if (checkoutStage === 1) {
-			return <PaymentForm onBackClick={handleBackClick} />;
+			return (
+				<PaymentForm
+					onNextClick={handleNextClick}
+					onBackClick={handleBackClick}
+					checkoutToken={checkoutToken}
+					deliveryData={deliveryData}
+					onCheckout={onCheckout}
+				/>
+			);
 		} else {
-			return <OrderReview onBackClick={handleBackClick} />;
+			return <OrderConfirmation order={order}/>;
 		}
 	};
 
 	return (
 		<div className="checkout-container">
-			<CheckoutProgress checkoutStage={checkoutStage} checkoutSteps={checkoutSteps} />
-			{checkoutStage === checkoutSteps.length ? "Order Confirmation Page" : checkoutToken && <ActiveForm />}			
+			<CheckoutProgress
+				checkoutStage={checkoutStage}
+				checkoutSteps={checkoutSteps}
+			/>
+			{checkoutStage === checkoutSteps.length
+				? 'Order Confirmation Page'
+				: checkoutToken && <ActiveForm />}
 		</div>
 	);
 };

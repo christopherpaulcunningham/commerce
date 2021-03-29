@@ -53,7 +53,6 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 			checkoutTokenId,
 			{ country, region: null }
 		);
-		console.log(options);
 		setShippingAvailableOptions(options);
 		setShippingOption(options[0].id);
 	};
@@ -73,7 +72,7 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 		<div className="address-form">
 			<span className="address-title">Address</span>
 			<form
-				onSubmit={handleSubmit((data) => onNextClick({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}
+				onSubmit={handleSubmit((data) => onNextClick({ ...data, shippingCountry, shippingSubdivision, shippingOption, shippingCost: shippingAvailableOptions[0].price.formatted_with_symbol }))}
 				noValidate={true}
 				className="form"
 			>
@@ -196,41 +195,6 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 						))}
 					</select>
 				</div>
-
-				{/* <AddressFormDropdown
-					id="country"
-					label="Country"
-					name="country"
-					rules={{ required: 'Country is required' }}
-					error={errors.country}
-					control={control}
-					options={countries}
-					value={shippingCountry}
-					handleChange={(e) => setShippingCountry(e.value)}
-					defaultValue={shippingCountry}
-					// selectedOption={shippingCountry ? shippingCountry : ""}
-				/>
-				<AddressFormDropdown
-					key={`my_unique_select_key__${shippingSubdivision}`}
-					id="county"
-					label="County/State"
-					name="county"
-					rules={{ required: 'County/State is required' }}
-					error={errors.county}
-					control={control}
-					options={subdivisions}
-					value={shippingSubdivision}
-					defaultValue={shippingSubdivision}
-					handleChange={(e) => setShippingSubdivision(e.value)}
-				/> */}
-
-				{/* <select>
-					{Object.entries(shippingSubdivisions)
-						.map(([code, name]) => ({ id: code, label: name }))
-						.map((item) => (
-							<option>{item.label}</option>
-						))}
-				</select> */}
 				<button type="submit" className="btn-next primary-btn">
 					Next
 				</button>
