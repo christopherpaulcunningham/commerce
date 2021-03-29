@@ -4,14 +4,22 @@
 @import 'styles/global';
 
 // Components
-@import 'components/Navbar/Navbar';
-@import 'components/Navbar/CartIcon/CartIcon';
+@import 'components/Cart/Cart';
+@import 'components/Cart/EmptyCart/EmptyCart';
+@import 'components/Cart/CartItem/CartItem';
+
+@import 'components/Checkout/Checkout';
+@import 'components/Checkout/CheckoutItems/CheckoutProgress/CheckoutProgress';
+@import 'components/Checkout/CheckoutItems/AddressForm/AddressForm';
+@import 'components/Checkout/CheckoutItems/AddressForm/AddressFormInput/AddressFormInput';
+@import 'components/Checkout/CheckoutItems/PaymentForm/PaymentForm';
+@import 'components/Checkout/CheckoutItems/PaymentForm/OrderReview/OrderReview';
+@import 'components/Checkout/CheckoutItems/OrderConfirmation/OrderConfirmation';
 
 @import 'components/Homepage/Homepage';
 @import 'components/Homepage/Product/Product';
 
-@import 'components/ProductDetails/ProductDetails';
+@import 'components/Navbar/Navbar';
+@import 'components/Navbar/CartIcon/CartIcon';
 
-@import 'components/Cart/Cart';
-@import 'components/Cart/EmptyCart/EmptyCart';
-@import 'components/Cart/CartItem/CartItem';
+@import 'components/ProductDetails/ProductDetails';

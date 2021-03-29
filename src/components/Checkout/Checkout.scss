@@ -1,0 +1,7 @@
+.checkout-container {
+	padding: 1rem;
+
+	@include breakpoint(md) {
+		padding: 1rem 4rem;
+	}
+}
