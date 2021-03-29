@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { commerce } from '../../lib/commerce';
 
@@ -9,7 +10,8 @@ import {
 	OrderConfirmation
 } from './CheckoutItems';
 
-const Checkout = ({ cart, order, handleClearShoppingCart, onCheckout }) => {
+const Checkout = ({ cart, order, onCheckout }) => {
+    const history = useHistory();
 	const checkoutSteps = ['Address', 'Payment', 'Confirm'];
 	const [checkoutStage, setCheckoutStage] = useState(0);
 	const [checkoutToken, setCheckoutToken] = useState(null);
@@ -38,6 +40,12 @@ const Checkout = ({ cart, order, handleClearShoppingCart, onCheckout }) => {
 		};
 		generateToken();
 	}, [cart]);
+
+	useEffect(() => {		
+		if(!cart.line_items){
+			history.push("/cart");
+		}
+	}, [])
 
 	const ActiveForm = () => {
 		if (checkoutStage === 0) {
@@ -69,7 +77,7 @@ const Checkout = ({ cart, order, handleClearShoppingCart, onCheckout }) => {
 				checkoutSteps={checkoutSteps}
 			/>
 			{checkoutStage === checkoutSteps.length
-				? 'Order Confirmation Page'
+				? <OrderConfirmation order={order}/>
 				: checkoutToken && <ActiveForm />}
 		</div>
 	);

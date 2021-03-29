@@ -1,8 +1,8 @@
 .cart {
 	padding: 1rem 1.5rem 2.5rem;
 
-	@include breakpoint(md) {
-		padding: 1rem 5rem 10rem;
+	@include breakpoint(xs) {
+		padding: 1rem 4rem 10rem;
 	}
 }
 
@@ -67,7 +67,7 @@
 	@include breakpoint(xs) {
 		float: right;
 		justify-content: flex-end;
-		width: 40%;
+		width: 50%;
 	}
 }
 

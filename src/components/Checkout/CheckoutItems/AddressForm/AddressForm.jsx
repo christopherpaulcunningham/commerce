@@ -180,7 +180,7 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 						))}
 					</select>
 				</div>
-				<div className="dropdown-container">
+				<div className="dropdown-container wide-dropdown">
 					<label className="form-item-label">Shipping options</label>
 					<select
 						className="address-dropdown"
@@ -194,7 +194,7 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 							</option>
 						))}
 					</select>
-				</div>
+				</div><div style={{ marginTop: '6.5rem', width: '50%' }}></div>
 				<button type="submit" className="btn-next primary-btn">
 					Next
 				</button>
