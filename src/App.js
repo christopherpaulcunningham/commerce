@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { commerce } from './lib/commerce';
 
-import { Navbar, Homepage, ProductDetails, Cart, Checkout } from './components';
+import { ScrollToTop, Navbar, Homepage, ProductDetails, Cart, Checkout } from './components';
 
 import './main.scss';
 
@@ -65,10 +65,12 @@ const App = () => {
 		<Router>
 			<div>
 				<Navbar totalItems={cart.total_items} />
+				<ScrollToTop />
 				<Switch>
 					<Route exact path="/">
 						<Homepage products={products} />
 					</Route>
+					
 					<Route
 						path="/products/:id"
 						render={(props) => (

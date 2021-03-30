@@ -76,7 +76,7 @@
 		padding: 1rem;
 
 		@include breakpoint(sm) {
-			margin: 0 2rem 0 0;
+			margin: 0 0 0 2rem;
 			padding: 1rem;
 		}
 
@@ -134,4 +134,9 @@
 			}
 		}
 	}
+}
+
+.loading {
+	display: block;
+	margin: 5rem auto;
 }
