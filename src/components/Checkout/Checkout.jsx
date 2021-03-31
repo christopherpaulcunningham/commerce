@@ -95,7 +95,7 @@ const Checkout = ({ cart, order, onCheckout }) => {
 	};
 
 	return (
-		<div className="checkout-container">
+		<div className="checkout-container container">
 			<CheckoutProgress
 				checkoutStage={checkoutStage}
 				checkoutSteps={checkoutSteps}

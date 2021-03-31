@@ -36,7 +36,7 @@ const ProductDetails = ({ match, onAddProductToCart }) => {
     }
 
 	return (
-		<div className="product-details">            
+		<div className="product-details container">            
             <div className="back">
             <Link to={'/'} style={{ textDecoration: 'none' }} >
                 <span className="btn-home">Home</span>

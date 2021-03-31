@@ -31,7 +31,7 @@ const RelatedProducts = ({ relatedProducts }) => {
             <span className="title centered-title">Related Products</span>
 			<Slider {...settings}>
 				{relatedProducts.map((product) => (                    
-                    <div className="related-product-item-container">
+                    <div className="related-product-item-container" key={product.id}>
                         <Link to={`/products/${product.id}`} style={{ textDecoration: 'none', color: '#000000' }} >
                             <div className="related-product-item">
                                 <img

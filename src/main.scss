@@ -4,6 +4,8 @@
 @import 'styles/global';
 
 // Components
+@import 'components/Bicycles/Bicycles';
+
 @import 'components/Cart/Cart';
 @import 'components/Cart/EmptyCart/EmptyCart';
 @import 'components/Cart/CartItem/CartItem';
@@ -17,7 +19,8 @@
 @import 'components/Checkout/CheckoutItems/OrderConfirmation/OrderConfirmation';
 
 @import 'components/Homepage/Homepage';
-@import 'components/Homepage/Product/Product';
+
+@import 'components/Product/Product';
 
 @import 'components/Navbar/Navbar';
 @import 'components/Navbar/CartIcon/CartIcon';
