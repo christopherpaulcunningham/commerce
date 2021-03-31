@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { commerce } from '../../lib/commerce';
 
 import RelatedProducts from './RelatedProducts/RelatedProducts';
 
 import PlusIcon from './../../assets/plus.png';
 import MinusIcon from './../../assets/minus.png';
+import SuccessIcon from './../../assets/success-alt.png';
 
 const ProductDetails = ({ match, onAddProductToCart }) => {
 	const productId = match.params.id;
-	const history = useHistory();
 	const [product, setProduct] = useState();
     const [quantity, setQuantity] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
+    const [alertClass, setAlertClass] = useState('');
 
 	const fetchProductById = async (productId) => {
 		const productInfo = await commerce.products.retrieve(productId);
@@ -25,8 +26,17 @@ const ProductDetails = ({ match, onAddProductToCart }) => {
 		fetchProductById(productId);
 	}, [productId]);
 
+    const handleCartButtonClick = () => {
+        // Add the product to the cart and show a success alert.
+        onAddProductToCart(product.id, quantity);
+        setAlertClass('show');
+        setTimeout(() => {
+			setAlertClass('');
+		}, 3000);
+    }
+
 	return (
-		<div className="product-details">
+		<div className="product-details">            
             <div className="back">
             <Link to={'/'} style={{ textDecoration: 'none' }} >
                 <span className="btn-home">Home</span>
@@ -61,7 +71,11 @@ const ProductDetails = ({ match, onAddProductToCart }) => {
                                         <img src={PlusIcon} className="quantity-image" alt="Plus" />
                                     </button>
                                 </div>
-                                <button className="btn-cart" onClick={() => onAddProductToCart(product.id, quantity) }>Add to Cart</button>                            
+                                <button className="btn-cart" onClick={handleCartButtonClick}>Add to Cart</button>
+                                <div id="success-alert" className={alertClass}>
+                                    <img className="alert-image" src={SuccessIcon} alt="Success" />
+                                    <span>Added to cart!</span>
+                                </div>
                             </div>
                             
                         </div>					
