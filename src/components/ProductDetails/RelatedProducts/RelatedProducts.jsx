@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const RelatedProducts = ({ relatedProducts }) => {
-	console.log(relatedProducts);
 	var settings = {
 		dots: true,
 		infinite: true,

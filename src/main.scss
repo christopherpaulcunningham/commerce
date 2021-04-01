@@ -4,7 +4,6 @@
 @import 'styles/global';
 
 // Components
-@import 'components/Bicycles/Bicycles';
 
 @import 'components/Cart/Cart';
 @import 'components/Cart/EmptyCart/EmptyCart';
@@ -20,10 +19,12 @@
 
 @import 'components/Homepage/Homepage';
 
-@import 'components/Product/Product';
-
 @import 'components/Navbar/Navbar';
 @import 'components/Navbar/CartIcon/CartIcon';
 
+@import 'components/Product/Product';
+
 @import 'components/ProductDetails/ProductDetails';
 @import 'components/ProductDetails/RelatedProducts/RelatedProducts';
+
+@import 'components/Shop/Shop';

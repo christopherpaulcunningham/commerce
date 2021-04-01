@@ -8,6 +8,7 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 99;
 
 	@include breakpoint(xs){
 		padding: 0 3rem;
@@ -20,4 +21,12 @@
 			height: 4.5rem;
 		}
 	}
+}
+
+.navbar-product-options{
+	align-items: center;
+	display: flex;
+	font-size: 0.9rem;
+	justify-content:space-between;
+	width: 20rem;
 }

@@ -1,0 +1,23 @@
+.shop-container {
+    padding: 1rem;
+
+	@include breakpoint(md) {
+		padding: 1rem 4rem;
+	}
+}
+
+.shop-flex-container {
+    display: flex;
+}
+
+.shop-filter-options {
+    border: 1px solid black;
+    width: 20%;
+}
+
+.shop-product-list {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+    // width: 80%
+}
