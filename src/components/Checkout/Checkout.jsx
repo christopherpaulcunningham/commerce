@@ -10,9 +10,33 @@ import {
 	OrderConfirmation
 } from './CheckoutItems';
 
+import PinIconActive from '../../assets/pin.png';
+import PinIconDisabled from '../../assets/pin-faded.png';
+import CardIconActive from '../../assets/credit-card.png';
+import CardIconDisabled from '../../assets/credit-card-faded.png';
+import TickIconActive from '../../assets/tick.png';
+import TickIconDisabled from '../../assets/tick-faded.png';
+
 const Checkout = ({ cart, order, onCheckout }) => {
     const history = useHistory();
-	const checkoutSteps = ['Address', 'Payment', 'Confirm'];
+	const checkoutSteps = [
+		{
+			name: 'Address',
+			activeIcon: PinIconActive,
+			disabledIcon: PinIconDisabled,
+		},
+		{
+			name: 'Payment',
+			activeIcon: CardIconActive,
+			disabledIcon: CardIconDisabled,
+		},
+		{
+			name: 'Confirmation',
+			activeIcon: TickIconActive,
+			disabledIcon: TickIconDisabled,
+		},
+	];
+
 	const [checkoutStage, setCheckoutStage] = useState(0);
 	const [checkoutToken, setCheckoutToken] = useState(null);
 	const [deliveryData, setDeliveryData] = useState({});
@@ -71,7 +95,7 @@ const Checkout = ({ cart, order, onCheckout }) => {
 	};
 
 	return (
-		<div className="checkout-container">
+		<div className="checkout-container container">
 			<CheckoutProgress
 				checkoutStage={checkoutStage}
 				checkoutSteps={checkoutSteps}

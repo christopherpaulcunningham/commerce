@@ -84,7 +84,7 @@
 
 	@include breakpoint(xs) {
 		margin: 0 0 1rem 1rem;
-		width: 12.5rem;
+		min-width: 12.5rem;
 	}
 }
 

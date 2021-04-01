@@ -1,11 +1,11 @@
 .product {
-	border: 1px solid lightgray;
+	// border: 1px solid lightgray;
 	border-radius: 5px;
 	cursor: pointer;
 	margin: 1rem;
 	text-align: center;
 	transition: transform 0.2s;
-	width: 17.5rem;
+	width: 15rem;
 
 	&:hover {
 		transform: scale(1.02);

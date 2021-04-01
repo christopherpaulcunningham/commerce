@@ -4,139 +4,264 @@
 	@include breakpoint(md) {
 		padding: 1rem 4rem;
 	}
+}
 
-	.back {
-		color: $lightFontColor;
-		font-size: 0.75rem;
-		margin: 0 0 1rem;
+.back {
+	color: $lightFontColor;
+	font-size: 0.75rem;
+	margin: 0 0 1rem;
+}
 
-		.btn-home {
-			background: none !important;
-			border: none;
-			color: $lightFontColor;
-			cursor: pointer;
-			margin-right: 1rem;
-			padding: 0;
-			text-decoration: none;
-		}
+.btn-home {
+	background: none !important;
+	border: none;
+	color: $lightFontColor;
+	cursor: pointer;
+	margin-right: 1rem;
+	padding: 0;
+	text-decoration: none;
+}
 
-		.product-header {
-			margin-left: 1rem;
-		}
+.product-header {
+	margin: 0 1rem;
+}
+
+.flex-container {
+	.flex-item:first-child {
+		font-size: 1.125rem;
+		margin-bottom: 2rem;
+		width: 100%;
 	}
 
-	.flex-container {
-		@include breakpoint(sm) {
-			display: flex;
-			flex-wrap: wrap;
+	.flex-item:not(:first-child) {
+		width: 100%;
+	}
 
-			.flex-item:not(:first-child) {
-				flex: 1;
-				width: 50%;
-			}
-		}
-
-		.flex-item:first-child {
-			font-size: 1.125rem;
-			margin-bottom: 2rem;
-			width: 100%;
-		}
+	@include breakpoint(sm) {
+		display: flex;
+		flex-wrap: wrap;
 
 		.flex-item:not(:first-child) {
-			width: 100%;
-		}
-	}
-
-	.image-container {
-		text-align: center;
-
-		@include breakpoint(sm) {
-			text-align: left;
-		}
-
-		.main-img {
-			width: 90%;
-
-			@include breakpoint(sm) {
-				width: 20rem;
-			}
-			@include breakpoint(md) {
-				width: 25rem;
-			}
-			@include breakpoint(lg) {
-				width: 30rem;
-			}
-		}
-	}
-
-	.info-container {
-		background-color: #f7f7f7;
-		border-radius: 5px;
-		margin: 2rem 0 0 0;
-		padding: 1rem;
-
-		@include breakpoint(sm) {
-			margin: 0 0 0 2rem;
-			padding: 1rem;
-		}
-
-		.price {
-			font-weight: 700;
-			margin: 0 0 2rem 0;
-		}
-
-		.description {
-			font-size: 0.85rem;
-
-			ul {
-				margin: 0 0rem 0 1rem;
-				padding: 0;
-
-				li p {
-					margin: 0;
-					padding: 0.125rem 0;
-				}
-			}
-		}
-
-		.details-flex-container {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.product-quantity-container {
-			line-height: 2.5rem;
-			margin: 1rem 0;
-			text-align: center;
+			flex: 1;
 			width: 50%;
 		}
+	}
+}
 
-		.btn-cart {
-			background-color: #000000;
-			border: none;
-			border-radius: 5px;
-			color: #ffffff;
-			cursor: pointer;
-			display: block;
-			font-size: 0.9rem;
-			font-weight: 600;
-			height: 2.5rem;
-			margin: 1rem auto 0;
-			width: 15rem;
+.image-container {
+	text-align: center;
 
-			&:hover {
-				background-color: #494949;
-				transition: all 0.2s ease-in;
-			}
+	@include breakpoint(sm) {
+		text-align: left;
+	}
+}
 
-			@include breakpoint(sm) {
-				float: right;
-			}
+.main-img {
+	width: 90%;
+
+	@include breakpoint(sm) {
+		width: 20rem;
+	}
+	@include breakpoint(md) {
+		width: 25rem;
+	}
+	@include breakpoint(lg) {
+		width: 30rem;
+	}
+}
+
+.info-container {
+	background-color: #f7f7f7;
+	border-radius: 5px;
+	margin: 2rem 0 0 0;
+	padding: 1rem;
+
+	@include breakpoint(sm) {
+		margin: 0 0 0 2rem;
+		padding: 1rem;
+	}
+}
+
+.price {
+	font-weight: 700;
+	margin: 0 0 2rem 0;
+}
+
+.description {
+	font-size: 0.85rem;
+
+	ul {
+		margin: 0 0rem 0 1rem;
+		padding: 0;
+
+		li p {
+			margin: 0;
+			padding: 0.125rem 0;
 		}
+	}
+}
+
+.details-flex-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product-quantity-container {
+	line-height: 2.5rem;
+	margin: 1rem 0;
+	text-align: center;
+	width: 50%;
+}
+
+.btn-cart {
+	background-color: #000000;
+	border: none;
+	border-radius: 5px;
+	color: #ffffff;
+	cursor: pointer;
+	display: block;
+	font-size: 0.9rem;
+	font-weight: 600;
+	height: 2.5rem;
+	margin: 1rem auto 0;
+	width: 15rem;
+
+	&:hover {
+		background-color: #494949;
+		transition: all 0.2s ease-in;
+	}
+
+	@include breakpoint(sm) {
+		float: right;
 	}
 }
 
 .loading {
 	display: block;
 	margin: 5rem auto;
+}
+
+#success-alert {
+	background-color: #dcffdc;
+	border: 0.5px solid #139b00;
+	border-left: 5px solid #139b00;
+	border-radius: 5px;
+	bottom: 2rem;
+	display: flex;
+	justify-content: left;
+	font-size: 0.9rem;
+	line-height: 1.5rem;
+	margin-left: -7.5rem;
+	padding: 0.75rem;
+	position: fixed;
+	right: 1rem;
+	visibility: hidden;
+	width: 13.25rem;
+	z-index: 1;
+
+	@include breakpoint(xs) {
+		right: 4rem;
+	}
+}
+
+#success-alert.show {
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	visibility: visible;
+
+	@-webkit-keyframes fadein {
+		from {
+			right: -1rem;
+			opacity: 0;
+		}
+		to {
+			right: 1rem;
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadein {
+		from {
+			right: -1rem;
+			opacity: 0;
+		}
+		to {
+			right: 1rem;
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes fadeout {
+		from {
+			right: 1rem;
+			opacity: 1;
+		}
+		to {
+			right: -1rem;
+			opacity: 0;
+		}
+	}
+
+	@keyframes fadeout {
+		from {
+			right: 1rem;
+			opacity: 1;
+		}
+		to {
+			right: -1rem;
+			opacity: 0;
+		}
+	}
+
+	@include breakpoint(xs) {
+		@-webkit-keyframes fadein {
+			from {
+				right: -1rem;
+				opacity: 0;
+			}
+			to {
+				right: 4rem;
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadein {
+			from {
+				right: -1rem;
+				opacity: 0;
+			}
+			to {
+				right: 4rem;
+				opacity: 1;
+			}
+		}
+
+		@-webkit-keyframes fadeout {
+			from {
+				right: 4rem;
+				opacity: 1;
+			}
+			to {
+				right: -1rem;
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeout {
+			from {
+				right: 4rem;
+				opacity: 1;
+			}
+			to {
+				right: -1rem;
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.alert-image {
+	display: inline-block;
+	margin: 0 1rem 0 0;
+	height: 1.5rem;
 }

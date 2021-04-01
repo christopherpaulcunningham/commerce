@@ -7,7 +7,7 @@ import CartItem from './CartItem/CartItem';
 const Cart = ({ cart, onRemoveProductFromCart, onUpdateCartQuantity }) => {
 	if (!cart.line_items)
 		return (
-			<div className="cart">
+			<div className="cart container">
 				<span className="title">
 					Your cart <span className="total-items">(0)</span>
 				</span>
@@ -16,7 +16,7 @@ const Cart = ({ cart, onRemoveProductFromCart, onUpdateCartQuantity }) => {
 		);
 
 	return (
-		<div className="cart">
+		<div className="cart container">
 			<span className="title">
 				Your cart{' '}
 				<span className="total-items">({cart.total_items})</span>

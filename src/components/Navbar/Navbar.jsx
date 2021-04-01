@@ -12,10 +12,19 @@ const Navbar = ({ totalItems }) => {
 			<Link to="/">
 				<img src={logo} className="logo" alt="logo" />
 			</Link>
-			{/* Hide the cart icon when viewing the cart */}
-			{location.pathname !== '/cart' && (
-				<CartIcon totalItems={totalItems} />
-			)}
+			<div className="navbar-product-options">
+			{location.pathname !== '/cart' && location.pathname !== '/checkout' && (
+				<>
+					<Link to="/shop/bicycles" style={{ textDecoration: 'none', color: '#000000' }}>
+						<span>Bicycles</span>
+					</Link>
+					<Link to="/shop/accessories" style={{ textDecoration: 'none', color: '#000000' }}>
+						<span>Accessories</span>
+					</Link>
+					<CartIcon totalItems={totalItems} />
+				</>
+				)}
+			</div>			
 		</div>
 	);
 };
