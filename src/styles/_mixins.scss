@@ -31,6 +31,15 @@
 	text-decoration: none;
 }
 
+@mixin remove-anchor-style() {
+	background: none !important;
+	color: #ffffff;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
 @mixin flex-container-space-between(){
 	align-items: center;
 	display: flex;
