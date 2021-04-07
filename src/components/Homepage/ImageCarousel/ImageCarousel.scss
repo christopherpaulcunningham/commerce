@@ -1,0 +1,46 @@
+.image-carousel-container {
+    margin: 0 0 2rem;
+}
+
+.image-carousel-item {
+    height: 15rem;
+    position: relative;
+
+    @include breakpoint(xs){
+        height: auto;
+    }
+
+    @include breakpoint(md){
+        height: 30rem;
+    }
+}
+
+.carousel-image {
+    width: 100%;
+    height: 15rem;
+
+    @include breakpoint(xs){
+        height: auto;
+    }
+}
+
+.carousel-image-text {
+    background-color: #dfa300;
+    color: #ffffff;
+    height: 3rem;
+    width: 10rem;
+    line-height: 3rem;
+    position: absolute;
+    text-align: center;
+}
+
+.fuji-text {
+    bottom: 1rem;
+    right: 2rem;
+}
+
+.cinelli-text {
+    bottom: 1rem;
+    right: 12.5rem;
+}
+
