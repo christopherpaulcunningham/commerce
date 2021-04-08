@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { commerce } from './lib/commerce';
 
-import { ScrollToTop, Navbar, Homepage, ProductDetails, Cart, Checkout, Shop } from './components';
+import { ScrollToTop, Navbar, Footer, Homepage, ProductDetails, Cart, Checkout, Shop } from './components';
 
 import './main.scss';
 
@@ -104,6 +104,7 @@ const App = () => {
 						/>
 					</Route>
 				</Switch>
+				<Footer />
 			</div>
 		</Router>
 	);

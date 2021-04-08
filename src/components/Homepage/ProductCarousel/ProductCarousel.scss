@@ -1,0 +1,63 @@
+.product-carousel-container {
+	font-size: 0.8rem;
+	margin: 0 auto 1rem;
+	padding: 1rem;
+	width: 97%;
+
+	@include breakpoint(sm) {
+		font-size: 0.9rem;
+		margin: 1rem auto 1rem;
+	}
+}
+
+.centered-title {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	color: #000000;
+}
+.product-carousel-item-container {
+	color: #000000;
+	cursor: pointer;
+	padding: 0;
+
+	@include breakpoint(sm) {
+		padding: 0 3rem;
+	}
+}
+
+.product-carousel-item {
+	text-align: center;
+}
+
+.product-carousel-item-image {
+	display: block;
+	height: 4.5rem;
+	margin: auto;
+
+	@include breakpoint(sm) {
+		height: 5rem;
+	}
+}
+
+.product-carousel-item-name {
+	display: block;
+	margin: 1rem 0 0.25rem;
+}
+
+.product-carousel-item-price {
+	display: block;
+	font-size: 0.75rem;
+	padding-bottom: 0.75rem;
+
+	@include breakpoint(sm) {
+		font-size: 0.8rem;
+	}
+}
+
+.carousel-skeleton {
+	width: 4rem;
+}

@@ -2,6 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	padding: 1rem 1.5rem;
 	width: 100%;
 
 	@include breakpoint(xs) {
@@ -13,8 +14,19 @@
 .homepage-title {
 	display: block;
 	font-size: 1.125rem;
-	margin-bottom: 1rem;
-	padding-left: 1rem;
+	margin: 0rem 0 1rem;
 	text-align: center;
-	width: 100%;	
+	width: 100%;
+
+	@include breakpoint(xs){
+		margin: 1rem 0 1rem;
+	}
+
+	@include breakpoint(sm){
+		margin: 2rem 0 1rem;
+	}
+}
+
+.splash-container {
+	width: 100%;
 }

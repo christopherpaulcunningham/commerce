@@ -10,7 +10,7 @@
 	width: 100%;
 	z-index: 99;
 
-	@include breakpoint(xs){
+	@include breakpoint(xs) {
 		padding: 0 3rem;
 	}
 
@@ -23,10 +23,16 @@
 	}
 }
 
-.navbar-product-options{
+.navbar-product-options {
 	align-items: center;
 	display: flex;
-	font-size: 0.9rem;
-	justify-content:space-between;
-	width: 20rem;
+	font-size: 0.8rem;
+	justify-content: space-around;
+	width: 12.5rem;
+
+	@include breakpoint(xs) {
+		font-size: 0.9rem;
+		justify-content: space-between;
+		width: 20rem;
+	}
 }
