@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import ProductSkeleton from '../../shared/ProductSkeleton/ProductSkeleton';
 
-const ProductCarousel = ({ products, isLoading }) => {
+const ProductCarousel = ({ products }) => {
 	var settings = {
 		dots: false,
 		infinite: true,
@@ -38,7 +38,7 @@ const ProductCarousel = ({ products, isLoading }) => {
 
 	return (
 		<div className="product-carousel-container">
-			{!isLoading ? (
+			{products.length ? (
 				<Slider {...settings}>
 					{products &&
 						products.map((product) => (
