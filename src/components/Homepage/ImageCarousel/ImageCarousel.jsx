@@ -23,7 +23,7 @@ const ImageCarousel = () => {
 				breakpoint: 768,
 				settings: {
 					autoplay: true,
-					autoplaySpeed: 5000,
+					autoplaySpeed: 4000,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					infinite: true,
@@ -37,20 +37,20 @@ const ImageCarousel = () => {
 		<div className="image-carousel-container">
 			<Slider {...settings}>
 				<div className="image-carousel-item">
-					<Link to="/products/prod_31q0o3QMglDdjR">				
-						<img className="carousel-image" src={CinelliImage} />
-						<div className="carousel-image-text cinelli-text">
-							Buy Now!
-						</div>
-					</Link>	
-				</div>
-				<div className="image-carousel-item">
 					<Link to="/products/prod_ZM8X5nZ4Q5pv4q">
 						<img className="carousel-image" src={FujiImage} />
-						<div className="carousel-image-text fuji-text">
+						<div className="carousel-image-text">
 							Buy Now!
 						</div>
 					</Link>
+				</div>
+				<div className="image-carousel-item">
+					<Link to="/products/prod_31q0o3QMglDdjR">				
+						<img className="carousel-image" src={CinelliImage} />
+						<div className="carousel-image-text">
+							Buy Now!
+						</div>
+					</Link>	
 				</div>
 			</Slider>
 		</div>

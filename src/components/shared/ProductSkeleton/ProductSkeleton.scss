@@ -1,0 +1,37 @@
+.skeleton-image {
+	background-color: $skeleton-base-color;
+	border-radius: 7.5px;
+	height: 4rem;
+	margin: 0 auto 1rem;
+	width: 50%;
+}
+
+.skeleton-line {
+	background-color: $skeleton-base-color;
+	border-radius: 5px;
+	height: 1rem;
+	margin: 0 auto 0.5rem;
+
+	&.long {
+		width: 70%;
+	}
+
+	&.short {
+		width: 30%;
+	}
+}
+
+.animated-gradient {
+	@include background-gradient();
+	animation: shine-lines $skeleton-animation-duration infinite linear;
+
+	@keyframes shine-lines {
+		0% {
+			background-position: -10rem;
+		}
+
+		100% {
+			background-position: 6rem;
+		}
+	}
+}
