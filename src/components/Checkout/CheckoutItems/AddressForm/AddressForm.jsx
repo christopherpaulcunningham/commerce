@@ -70,7 +70,7 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 
 	return (
 		<div className="address-form">
-			<span className="address-title">Address</span>
+			<span className="address-title">Delivery Address</span>
 			<form
 				onSubmit={handleSubmit((data) => onNextClick({ ...data, shippingCountry, shippingSubdivision, shippingOption, shippingCost: shippingAvailableOptions[0].price.formatted_with_symbol }))}
 				noValidate={true}
@@ -83,6 +83,10 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 					name="email"
 					register={register({
 						required: 'Email address is required.',
+						pattern: {
+							value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+							message: 'Enter a valid e-mail address',
+						},
 					})}
 					error={errors.email}
 					className="address-form-item"

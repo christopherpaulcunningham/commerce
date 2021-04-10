@@ -20,8 +20,7 @@
 }
 
 .dropdown-container {
-	width: 49%;
-	padding: 0 1rem;
+	width: 47%;
 }
 
 .address-form-label {
@@ -48,7 +47,7 @@
     width: 100%;
 
     @include breakpoint(sm) {
-        width: 75%;
+        width: 47%;
     }
 }
 
