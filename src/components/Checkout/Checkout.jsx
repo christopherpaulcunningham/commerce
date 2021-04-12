@@ -69,14 +69,12 @@ const Checkout = ({ cart, order, resetOrder, onCheckout }) => {
 	}, [cart]);
 
 	useEffect(() => {
-		if(cart){
-			if (!cart.line_items) {
-				history.push('/cart');
-			}else {
-				resetOrder();
-			}
-		}		
-	}, [cart, history]);
+		if (!cart.line_items) {
+			history.push('/cart');
+		} else {
+			resetOrder();
+		}
+	}, []);
 
 	const ActiveForm = () => {
 		if (checkoutStage === 0) {
