@@ -8,6 +8,7 @@
 @import 'components/Cart/Cart';
 @import 'components/Cart/EmptyCart/EmptyCart';
 @import 'components/Cart/CartItem/CartItem';
+@import 'components/Cart/CartItemSkeleton/CartItemSkeleton';
 
 @import 'components/Checkout/Checkout';
 @import 'components/Checkout/CheckoutItems/CheckoutProgress/CheckoutProgress';
@@ -16,6 +17,7 @@
 @import 'components/Checkout/CheckoutItems/PaymentForm/PaymentForm';
 @import 'components/Checkout/CheckoutItems/PaymentForm/OrderReview/OrderReview';
 @import 'components/Checkout/CheckoutItems/OrderConfirmation/OrderConfirmation';
+@import 'components/Checkout/CheckoutItems/CheckoutSkeleton/CheckoutSkeleton';
 
 @import 'components/Footer/Footer';
 
@@ -30,6 +32,7 @@
 
 @import 'components/ProductDetails/ProductDetails';
 @import 'components/ProductDetails/RelatedProducts/RelatedProducts';
+@import 'components/ProductDetails/ProductDetailsSkeleton/ProductDetailsSkeleton';
 
 @import 'components/shared/ProductSkeleton/ProductSkeleton';
 

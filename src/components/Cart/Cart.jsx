@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import EmptyCart from './EmptyCart/EmptyCart';
 import CartItem from './CartItem/CartItem';
+import CartItemSkeleton from './CartItemSkeleton/CartItemSkeleton';
+
+import RemovedIcon from '../../assets/removed.png';
 
 const Cart = ({ cart, onRemoveProductFromCart, onUpdateCartQuantity }) => {
-	if (!cart.line_items)
-		return (
-			<div className="cart container">
-				<span className="title">
-					Your cart <span className="total-items">(0)</span>
-				</span>
-				<span className="loading">Loading...</span>
-			</div>
-		);
+	const [alertClass, setAlertClass] = useState('');
 
 	return (
 		<div className="cart container">
@@ -21,7 +16,9 @@ const Cart = ({ cart, onRemoveProductFromCart, onUpdateCartQuantity }) => {
 				Your cart{' '}
 				<span className="total-items">({cart.total_items})</span>
 			</span>
-			{!cart.line_items.length ? (
+			{!cart.line_items ? (
+				<CartItemSkeleton />
+			) : !cart.line_items.length ? (
 				<EmptyCart />
 			) : (
 				<div>
@@ -32,10 +29,19 @@ const Cart = ({ cart, onRemoveProductFromCart, onUpdateCartQuantity }) => {
 									onRemoveProductFromCart
 								}
 								onUpdateCartQuantity={onUpdateCartQuantity}
+								setAlertClass={setAlertClass}
 								item={item}
 								key={index}
 							/>
 						))}
+					</div>
+					<div id="removed-alert" className={alertClass}>
+						<img
+							className="alert-image"
+							src={RemovedIcon}
+							alt="Removed"
+						/>
+						<span>Removed from cart.</span>
 					</div>
 					<div className="subtotal-container">
 						<span className="subtotal-title">Subtotal</span>

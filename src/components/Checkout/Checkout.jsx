@@ -7,7 +7,8 @@ import {
 	CheckoutProgress,
 	AddressForm,
 	PaymentForm,
-	OrderConfirmation
+	OrderConfirmation,
+	CheckoutSkeleton,
 } from './CheckoutItems';
 
 import PinIconActive from '../../assets/pin.png';
@@ -17,8 +18,8 @@ import CardIconDisabled from '../../assets/credit-card-faded.png';
 import TickIconActive from '../../assets/tick.png';
 import TickIconDisabled from '../../assets/tick-faded.png';
 
-const Checkout = ({ cart, order, onCheckout }) => {
-    const history = useHistory();
+const Checkout = ({ cart, order, resetOrder, onCheckout }) => {
+	const history = useHistory();
 	const checkoutSteps = [
 		{
 			name: 'Address',
@@ -43,10 +44,12 @@ const Checkout = ({ cart, order, onCheckout }) => {
 
 	const handleBackClick = () => {
 		setCheckoutStage((prevActiveStep) => prevActiveStep - 1);
+		window.scrollTo(0, 0);
 	};
 
 	const handleNextClick = (data) => {
 		setCheckoutStage((prevActiveStep) => prevActiveStep + 1);
+		window.scrollTo(0, 0);
 		setDeliveryData(data);
 	};
 
@@ -65,11 +68,15 @@ const Checkout = ({ cart, order, onCheckout }) => {
 		generateToken();
 	}, [cart]);
 
-	useEffect(() => {		
-		if(!cart.line_items){
-			history.push("/cart");
-		}
-	}, [])
+	useEffect(() => {
+		if(cart){
+			if (!cart.line_items) {
+				history.push('/cart');
+			}else {
+				resetOrder();
+			}
+		}		
+	}, [cart, history]);
 
 	const ActiveForm = () => {
 		if (checkoutStage === 0) {
@@ -90,7 +97,7 @@ const Checkout = ({ cart, order, onCheckout }) => {
 				/>
 			);
 		} else {
-			return <OrderConfirmation order={order}/>;
+			return <OrderConfirmation order={order} />;
 		}
 	};
 
@@ -100,9 +107,13 @@ const Checkout = ({ cart, order, onCheckout }) => {
 				checkoutStage={checkoutStage}
 				checkoutSteps={checkoutSteps}
 			/>
-			{checkoutStage === checkoutSteps.length
-				? <OrderConfirmation order={order}/>
-				: checkoutToken && <ActiveForm />}
+			{checkoutStage === checkoutSteps.length ? (
+				<OrderConfirmation order={order} />
+			) : checkoutToken ? (
+				<ActiveForm />
+			) : (
+				<CheckoutSkeleton />
+			)}
 		</div>
 	);
 };

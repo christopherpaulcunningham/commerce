@@ -2,12 +2,10 @@
     display: inline-block;
     height: 4.5rem;
     margin: 0 0 1rem;
-    padding: 0 1rem;
     width: 100%;
 
     @include breakpoint(xs){
-        margin: 0 0 0.5rem;
-        width: 49%;        
+        width: 47%;        
     }
 }
 

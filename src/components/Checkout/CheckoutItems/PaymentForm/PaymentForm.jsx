@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import {
 	CardElement,
@@ -10,7 +10,7 @@ import OrderReview from './OrderReview/OrderReview';
 
 const stripe = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-const PaymentForm = ({ onNextClick, onBackClick, checkoutToken, deliveryData, onCheckout }) => {
+const PaymentForm = ({ onNextClick, checkoutToken, deliveryData, onCheckout }) => {
 
 	const handleSubmit = async (evt, elements, stripe) => {
 		// Don't refresh on button click.

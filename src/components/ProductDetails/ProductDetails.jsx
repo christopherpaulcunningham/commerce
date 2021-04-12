@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { commerce } from '../../lib/commerce';
 
 import RelatedProducts from './RelatedProducts/RelatedProducts';
+import ProductDetailsSkeleton from './ProductDetailsSkeleton/ProductDetailsSkeleton';
 
 import PlusIcon from './../../assets/plus.png';
 import MinusIcon from './../../assets/minus.png';
@@ -14,8 +15,6 @@ const ProductDetails = ({ match, onAddProductToCart }) => {
 	const [quantity, setQuantity] = useState(1);
 	const [isLoading, setIsLoading] = useState(false);
 	const [alertClass, setAlertClass] = useState('');
-
-	// console.log(product.categories.some(category => category.name === "Bicycles"));
 
 	const fetchProductById = async (productId) => {
 		const productInfo = await commerce.products.retrieve(productId);
@@ -35,7 +34,7 @@ const ProductDetails = ({ match, onAddProductToCart }) => {
 		setTimeout(() => {
 			setAlertClass('');
 		}, 3000);
-	};
+	}; 
 
 	return (
 		<div className="product-details container">
@@ -66,13 +65,12 @@ const ProductDetails = ({ match, onAddProductToCart }) => {
 				)}
 			</div>
 			{isLoading ? (
-				<span className="loading">Loading...</span>
+				<ProductDetailsSkeleton />
 			) : (
 				product && (
 					<>
 						<div className="flex-container">
 							<div className="name flex-item">{product.name}</div>
-
 							<div className="image-container flex-item">
 								<img
 									src={product.media.source}

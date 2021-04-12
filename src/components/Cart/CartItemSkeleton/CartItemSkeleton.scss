@@ -1,0 +1,77 @@
+.cart-skeleton-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 0;
+}
+
+.skeleton-cart-item-image {
+	background-color: $skeleton-base-color;
+	border-radius: 7.5px;
+	height: 5rem;
+	width: 15%;
+}
+
+.skeleton-cart-sub-container {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 80%;
+
+	@include breakpoint(xs) {
+		flex-wrap: none;
+	}
+}
+
+.skeleton-cart-line {
+	background-color: $skeleton-base-color;
+	border-radius: 7.5px;
+	height: 1rem;
+
+	&.long {
+		width: 100%;
+
+		@include breakpoint(xs) {
+			width: 30%;
+		}
+	}
+
+	&.short {
+		width: 15%;
+
+		@include breakpoint(xs) {
+			width: 7.5%;
+		}
+	}
+
+	&.medium {
+		margin: 0 0 2rem 90%;
+		width: 10%;
+	}
+}
+
+.align-right {
+	align-items: right;
+	border-top: 1px solid $skeleton-base-color;
+	margin: 3rem 0 0;
+	padding: 2rem 0 0;
+}
+
+.skeleton-cart-button-container {
+	float: right;
+	text-align: right;
+	width: 100%;
+
+	@include breakpoint(xs) {
+		width: 50%;
+	}
+
+	div {
+		background-color: $skeleton-base-color;
+		border-radius: 7.5px;
+		display: inline-block;
+		height: 3rem;
+		margin: 0 0 0 2rem;
+		width: 40%;
+	}
+}

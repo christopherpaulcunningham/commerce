@@ -13,8 +13,8 @@ const App = () => {
 
 	// Fetch a list of products from commerce js.
 	const fetchProducts = async () => {
-		const { data } = await commerce.products.list();
-		setProducts(data);
+		const { data } = await commerce.products.list({ limit: 200 });
+		setProducts(data.filter((product) => product.active === true));
 	};
 
 	// Fetch the cart.
@@ -61,6 +61,10 @@ const App = () => {
 		fetchCart();
 	}, []);
 
+	const handleResetOrder = () => {
+		setOrder({});
+	}
+
 	return (
 		<Router>
 			<div>
@@ -99,6 +103,7 @@ const App = () => {
 						<Checkout
 							cart={cart}
 							order={order}
+							resetOrder={handleResetOrder}
 							onClearShoppingCart={handleClearShoppingCart}
 							onCheckout={handleCheckout}
 						/>

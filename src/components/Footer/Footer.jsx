@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-    console.log(currentYear);
 
     return (
         <div className="footer-container">
@@ -23,9 +22,9 @@ const Footer = () => {
             </div>
             <div className="footer-section">
                 <span className="header">Social</span>
-                <a href="https://www.instagram.com" target="_blank" className="social-link">Instagram</a>
-                <a href="https://www.facebook.com" target="_blank" className="social-link">Facebook</a>
-                <a href="https://www.twitter.com" target="_blank" className="social-link">Twitter</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="social-link">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer" className="social-link">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank" rel="noreferrer" className="social-link">Twitter</a>
             </div>
             <div className="break"></div>
             <div className="footer-section trademark">

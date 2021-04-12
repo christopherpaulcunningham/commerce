@@ -20,18 +20,3 @@
 		width: 30%;
 	}
 }
-
-.animated-gradient {
-	@include background-gradient();
-	animation: shine-lines $skeleton-animation-duration infinite linear;
-
-	@keyframes shine-lines {
-		0% {
-			background-position: -10rem;
-		}
-
-		100% {
-			background-position: 6rem;
-		}
-	}
-}

@@ -21,10 +21,7 @@ const Homepage = ({ products }) => {
 				<ImageCarousel />
 			</div>
 			<span className="homepage-title">Newest Products</span>
-			<ProductCarousel
-				products={recentlyAdded}
-				isLoading={!recentlyAdded.length}
-			/>
+			<ProductCarousel products={recentlyAdded} />
 		</div>
 	);
 };

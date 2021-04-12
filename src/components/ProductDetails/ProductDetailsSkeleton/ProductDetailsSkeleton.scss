@@ -1,0 +1,80 @@
+.skeleton-details-header {
+	background-color: $skeleton-base-color;
+	border-radius: 5px;
+	height: 1rem;
+    margin: 1.5rem 0 0;
+    width: 30%;
+
+    @include breakpoint(sm){
+        margin: 1.5rem 0 2rem;
+    }
+}
+
+.skeleton-image-container {
+    display: block;
+    margin: 0 0 0rem;
+	padding: 2rem 0;
+    width: 100%;
+
+    @include breakpoint(sm){
+        display: inline-block;
+        margin: 0 0 7rem;
+        vertical-align: top;
+        width: 50%;
+    }
+
+	.details-skeleton-image {
+		background-color: $skeleton-base-color;
+		border-radius: 7.5px;
+		height: 15rem;
+        margin: 0 auto 1rem;
+		width: 70%;
+
+        @include breakpoint(sm){
+            height: 17rem;
+            margin: 0 0 1rem;
+            width: 85%;
+        }
+	}
+}
+
+.skeleton-info-container {
+	background-color: $skeleton-base-color-alt;
+	border-radius: 7.5px;
+    display: block;
+    height: 22rem;
+    padding: 1rem;
+    width: 100%;
+
+    @include breakpoint(sm){
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+    }
+}
+
+.details-skeleton-line {
+	background-color: $skeleton-base-color;
+	border-radius: 7.5px;
+    height: 1rem;
+    margin: 0 0 1rem;
+
+    &.last-line {
+        width: 40%;
+    }
+}
+
+.details-skeleton-price {
+    width: 15%;
+    margin: 0 0 2rem;
+}
+
+.details-skeleton-button {
+	background-color: $skeleton-base-color;
+	border-radius: 7.5px;
+	height: 2.5rem;
+	margin: 4rem auto 0;
+	width: 15rem;
+    float: right;
+
+}

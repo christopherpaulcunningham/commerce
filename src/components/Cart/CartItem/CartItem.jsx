@@ -5,11 +5,19 @@ import PlusIcon from './../../../assets/plus.png';
 import MinusIcon from './../../../assets/minus.png';
 import TrashIcon from './../../../assets/trashcan.png';
 
-const CartItem = ({ item, onRemoveProductFromCart, onUpdateCartQuantity }) => {
+const CartItem = ({ item, onRemoveProductFromCart, onUpdateCartQuantity, setAlertClass }) => {
+
+	const handleRemoveProductFromCart = (id) => {
+		onRemoveProductFromCart(item.id);
+		setAlertClass('show');
+		setTimeout(() => {
+			setAlertClass('');
+		}, 3000);
+	}
+
 	return (
 		<div className="cart-item">
 			<img src={item.media.source} className="item-image" alt="Item" />
-
 			<div className="item-details">
 				<span className="item-name">
 					<Link
@@ -42,13 +50,13 @@ const CartItem = ({ item, onRemoveProductFromCart, onUpdateCartQuantity }) => {
 					</div>
 					<button
 						className="btn-remove"
-						onClick={() => onRemoveProductFromCart(item.id)}
+						onClick={() => handleRemoveProductFromCart(item.id)}
 					>
 						Remove
 					</button>
 					<button
 						className="btn-remove-alt"
-						onClick={() => onRemoveProductFromCart(item.id)}
+						onClick={(evt) => handleRemoveProductFromCart(evt)}
 					>
 						<img src={TrashIcon} alt="Remove" />
 					</button>
