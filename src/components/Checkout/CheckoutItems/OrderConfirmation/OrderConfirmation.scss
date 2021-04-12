@@ -1,37 +1,174 @@
 .order-confirmation-container {
-    margin: 2rem auto;
-    text-align: center;
-    width: 100%;
+	margin: 2rem auto;
+	text-align: center;
+	width: 100%;
 
-    @include breakpoint(xs){
-        width: 70%;
-    }
+	@include breakpoint(xs) {
+		width: 70%;
+	}
 }
 
 .success-icon {
-    height: 5rem;
+	height: 5rem;
+    margin: 2.5rem 0 0;
 
-    @include breakpoint(xs){
-        margin: 1rem 0 0;
-        height: 7rem;
-    }
+	@include breakpoint(xs) {
+		margin: 5rem 0 0;
+		height: 7rem;
+	}
 }
 
 .thanks-text {
-    display: block;
-    font-size: 1.5rem;
-    margin: 2rem 0;
+	display: block;
+	font-size: 1.5rem;
+	margin: 2rem 0;
 
-    @include breakpoint(xs){
-        font-size: 2rem;
-    }
+	@include breakpoint(xs) {
+		font-size: 2rem;
+	}
 }
 
 .order-number-text {
-    color: $lightFontColor;
-    font-size: 0.8rem;
+	color: $lightFontColor;
+    display: block;
+	font-size: 0.8rem;
+    margin: 0 0 5rem;
+
+	@include breakpoint(xs) {
+		font-size: 0.9rem;
+	}
+}
+
+.finish {
+	margin: 0 0 5rem;
+	width: 10rem;
+}
+
+.swipe-animation {
+	height: 15.5rem;
+	margin: 3.75rem auto 0;
+	overflow: hidden;
+    padding: 3.75rem 0 0;
+	position: relative;
+	width: 100%;
+}
+
+.credit-card {
+	animation: swipe-card 3s ease-in-out infinite;
+	background-image: linear-gradient(
+		to right bottom,
+		#95c1ef,
+		#98b5d6,
+		#5babda,
+		#6c9aef,
+		#532baf
+	);
+	border-radius: 10px;
+	height: 4rem;
+	position: relative;
+	width: 8rem;
+	z-index: 2;
+
+	.credit-card-stripe {
+		background-color: #434343;
+		bottom: 0.75rem;
+		height: 1rem;
+		position: absolute;
+		width: 100%;
+
+        @include breakpoint(xs) {
+            bottom: 1rem;    
+            height: 1.5rem;
+        }
+	}
+
+    @include breakpoint(xs) {
+        height: 5rem;
+        width: 10rem;
+    }
+}
+.swiper-top,
+.swiper-bottom {
+	background-color: #434343;
+	border-radius: 8px 8px 0 0;
+	position: absolute;
+}
+.swiper-top {
+	bottom: 8.75rem;
+	height: 1rem;
+    left: calc(50% - 3rem);
+	width: 6rem;
+	z-index: 0;
+
+    @include breakpoint(xs) {
+        bottom: 8rem;
+        height: 1.25rem;
+        left: calc(50% - 5rem);
+        width: 10rem;
+    }
+}
+.swiper-bottom {
+	bottom: 5.5rem;
+	height: 3rem;
+	left: calc(50% - 4rem);
+    width: 8rem;
+	z-index: 3;
+
+	.light-indicator {
+		animation: reader-light 2s ease-in-out infinite;
+		background: #dadada;
+		border-radius: 50%;
+		height: 0.5rem;
+		position: absolute;
+		right: 1rem;
+		top: 0.75rem;
+		width: 0.5rem;
+
+        @include breakpoint(xs) {
+            height: 0.75rem;
+            width: 0.75rem;
+        }
+	}
 
     @include breakpoint(xs){
-        font-size: 0.9rem;
+        bottom: 3.75rem;
+        height: 4rem;
+        left: calc(50% - 6.25rem);
+        width: 12.5rem;
     }
+}
+
+@keyframes swipe-card {
+	0% {
+		margin-left: -21.875rem;
+		transform: rotate(25deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		margin-left: 37.5rem;
+		transform: rotate(-25deg);
+	}
+}
+@keyframes reader-light {
+	0% {
+		background-color: #dadada;
+	}
+	3% {
+		background-color: #d82f2f;
+	}
+	90% {
+		background-color: #b8fd99;
+	}
+	100% {
+		background-color: #dadada;
+	}
+}
+
+.processing {
+    color: #008000;
+    display: block;
+    font-weight: 700;
+    margin: 0 0 10rem;
 }

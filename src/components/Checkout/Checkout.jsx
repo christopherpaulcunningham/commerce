@@ -18,7 +18,7 @@ import CardIconDisabled from '../../assets/credit-card-faded.png';
 import TickIconActive from '../../assets/tick.png';
 import TickIconDisabled from '../../assets/tick-faded.png';
 
-const Checkout = ({ cart, order, onCheckout }) => {
+const Checkout = ({ cart, order, resetOrder, onCheckout }) => {
 	const history = useHistory();
 	const checkoutSteps = [
 		{
@@ -69,6 +69,7 @@ const Checkout = ({ cart, order, onCheckout }) => {
 	}, [cart]);
 
 	useEffect(() => {
+		resetOrder();
 		if (!cart.line_items) {
 			history.push('/cart');
 		}
