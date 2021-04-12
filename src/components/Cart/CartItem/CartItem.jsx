@@ -18,7 +18,6 @@ const CartItem = ({ item, onRemoveProductFromCart, onUpdateCartQuantity, setAler
 	return (
 		<div className="cart-item">
 			<img src={item.media.source} className="item-image" alt="Item" />
-
 			<div className="item-details">
 				<span className="item-name">
 					<Link

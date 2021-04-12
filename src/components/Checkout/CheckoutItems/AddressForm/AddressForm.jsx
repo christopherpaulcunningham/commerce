@@ -14,7 +14,9 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 	const [shippingCountry, setShippingCountry] = useState('');
 	const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
 	const [shippingSubdivision, setShippingSubdivision] = useState('');
-	const [shippingAvailableOptions, setShippingAvailableOptions] = useState([]);
+	const [shippingAvailableOptions, setShippingAvailableOptions] = useState(
+		[]
+	);
 	const [shippingOption, setShippingOption] = useState('');
 
 	// Options for dropdown menus.
@@ -58,21 +60,31 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 	};
 
 	useEffect(() => {
-		fetchShippingCountries(checkoutToken.id);
-	}, []);
+		if (checkoutToken) fetchShippingCountries(checkoutToken.id);
+	}, [checkoutToken]);
 
 	useEffect(() => {
 		if (shippingCountry) {
 			fetchSubdivisions(shippingCountry);
 			fetchShippingOptions(checkoutToken.id, shippingCountry);
 		}
-	}, [shippingCountry]);
+	}, [shippingCountry, checkoutToken]);
 
 	return (
 		<div className="address-form">
 			<span className="address-title">Delivery Address</span>
 			<form
-				onSubmit={handleSubmit((data) => onNextClick({ ...data, shippingCountry, shippingSubdivision, shippingOption, shippingCost: shippingAvailableOptions[0].price.formatted_with_symbol }))}
+				onSubmit={handleSubmit((data) =>
+					onNextClick({
+						...data,
+						shippingCountry,
+						shippingSubdivision,
+						shippingOption,
+						shippingCost:
+							shippingAvailableOptions[0].price
+								.formatted_with_symbol,
+					})
+				)}
 				noValidate={true}
 				className="form"
 			>
@@ -188,17 +200,17 @@ const AddressForm = ({ checkoutToken, onNextClick }) => {
 					<label className="form-item-label">Shipping options</label>
 					<select
 						className="address-dropdown"
-						onChange={(evt) =>
-							setShippingOption(evt.target.value)
-						}
+						onChange={(evt) => setShippingOption(evt.target.value)}
 					>
 						{shippingAvailableOptions.map((option) => (
 							<option key={option.id} value={option.id}>
-								{option.description} - {option.price.formatted_with_symbol}
+								{option.description} -{' '}
+								{option.price.formatted_with_symbol}
 							</option>
 						))}
 					</select>
-				</div><div style={{ marginTop: '6.5rem', width: '50%' }}></div>
+				</div>
+				<div style={{ marginTop: '6.5rem', width: '50%' }}></div>
 				<button type="submit" className="btn-next primary-btn">
 					Next
 				</button>

@@ -13,7 +13,7 @@ const App = () => {
 
 	// Fetch a list of products from commerce js.
 	const fetchProducts = async () => {
-		const { data } = await commerce.products.list();
+		const { data } = await commerce.products.list({ limit: 200 });
 		setProducts(data.filter((product) => product.active === true));
 	};
 

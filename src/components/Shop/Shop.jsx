@@ -57,8 +57,8 @@ const Shop = ({ match, products }) => {
 							<Product product={product} key={product.id} />
 					  ))
 					: [...Array(12)].map((element, index) => (
-							<div className="shop-skeleton">
-								<ProductSkeleton key={index} />
+							<div className="shop-skeleton" key={index}>
+								<ProductSkeleton />
 							</div>
 					  ))}
 			</div>

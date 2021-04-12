@@ -38,7 +38,7 @@ const ImageCarousel = () => {
 			<Slider {...settings}>
 				<div className="image-carousel-item">
 					<Link to="/products/prod_ZM8X5nZ4Q5pv4q">
-						<img className="carousel-image" src={FujiImage} />
+						<img className="carousel-image" src={FujiImage} alt="Fuji ad" />
 						<div className="carousel-image-text">
 							Buy Now!
 						</div>
@@ -46,7 +46,7 @@ const ImageCarousel = () => {
 				</div>
 				<div className="image-carousel-item">
 					<Link to="/products/prod_31q0o3QMglDdjR">				
-						<img className="carousel-image" src={CinelliImage} />
+						<img className="carousel-image" src={CinelliImage} alt="Cinelli ad"/>
 						<div className="carousel-image-text">
 							Buy Now!
 						</div>

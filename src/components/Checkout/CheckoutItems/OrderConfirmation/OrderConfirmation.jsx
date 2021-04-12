@@ -33,17 +33,14 @@ const OrderConfirmation = ({ order }) => {
 						className="success-icon"
 					/>
 					{order.customer && (
-						<span className="thanks-text">
-							Thank you for your order, {order.customer.firstname}
-							!
-						</span>
+						<span className="thanks-text">Thank you for your order, {order.customer.firstname}!</span>
 					)}
 					{order.customer && (
-						<span className="order-number-text">
-							Your order number is {order.customer_reference}.
-						</span>
+						<span className="order-number-text">Your order number is {order.customer_reference}.</span>
 					)}
-					<Link to="/"><button className="primary-btn finish">Continue Shopping</button></Link>
+					<Link to="/">
+						<button className="primary-btn finish">Continue Shopping</button>
+					</Link>
 				</>
 			)}
 		</div>

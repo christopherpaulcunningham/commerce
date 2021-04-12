@@ -12,7 +12,7 @@ const CheckoutProgress = ({ checkoutStage, checkoutSteps }) => {
 							(checkoutStage === index ? ' active' : ' inactive')
 						}
 					>
-						<img src={checkoutStage === index ? step.activeIcon : step.disabledIcon} className="checkout-progress-icon" />
+						<img src={checkoutStage === index ? step.activeIcon : step.disabledIcon} className="checkout-progress-icon" alt="Progress item" />
 					</div>
 				);
 			})}

@@ -28,7 +28,7 @@ const OrderReview = ({ checkoutToken, shippingOption }) => {
                 <div className="order-subtotal">
                     <span className="review-total-header">Shipping fee</span><span className="review-total-price">€{shippingFee}</span>
                 </div>
-                <span className="order-total">€{orderTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                <span className="order-total">€{orderTotal.toFixed(2)}</span>
             </div>
 		</div>
 	);
